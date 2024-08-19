@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: blue;
+            bottom: 0;
+        }
+
+        button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box" id="box1"></div>
+        <div class="box box2" id="box2"></div>
+        <button id="animateButton">Animate</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        const box1 = document.getElementById('box1');
+        const box2 = document.getElementById('box2');
+        const button = document.getElementById('animateButton');
+
+        button.addEventListener('click', () => {
+            const timeline = gsap.timeline();
+            
+            // Animation pour la div 1 (translation droite puis vers le bas)
+            timeline.to(box1, {
+                duration: 1, 
+                x: 200, // Translation vers la droite
+                ease: "power1.inOut"
+            }).to(box1, {
+                duration: 1,
+                y: 200, // Descend vers le bas
+                ease: "power1.inOut"
+            }, "-=0.5"); // Overlap partiel des animations (0.5 secondes de chevauchement)
+            
+            // Animation pour la div 2 (du bas vers le haut et augmentation de taille)
+            timeline.to(box2, {
+                duration: 1.5,
+                y: -200, // Monte vers le haut
+                scale: 2, // Augmentation de la taille
+                ease: "power1.inOut"
+            }, "-=1"); // Synchroniser avec la fin de la translation de box1
+        });
+    </script>
+</body>
+</html>
