@@ -112,7 +112,7 @@ const onLeave = (el: Element, done: () => void) => {
                   <ChevronRight class="m-0  translate-x-0 group-hover:-translate-x-full transition-transform delay-150 duration-150 ease-in-out" />
                   <ChevronsRight class="absolute -translate-x-full group-hover:-translate-x-0 delay-150 transition-transform duration-150 ease-in-out m-0" />
                 </div>
-                <span class=" text-5xl li" >
+                <span class="text-4xl sm:text-5xl  li" >
                   {{ link.text }}
                 </span>
               </nuxt-link>
@@ -126,17 +126,17 @@ const onLeave = (el: Element, done: () => void) => {
             </Button>
             <Button variant="outline" class="">
               <div class="flex items-center  gap-2">
-                <Mail class="w-4 h-4 " /> <span>-</span> <span>Email</span>
+                <Mail class="w-4 h-4 " /> <span class="hidden sm:inline-flex">-</span> <span class="hidden min-[455px]:inline-flex" >Email</span>
               </div>
             </Button>
             <Button variant="outline" class="">
               <div class="flex items-center  gap-2">
-                <Linkedin class="w-4 h-4 " /> <span>-</span> <span>LinkedIn</span>
+                <Linkedin class="w-4 h-4 " /> <span class="hidden sm:inline-flex">-</span> <span class="hidden min-[455px]:inline-flex">LinkedIn</span>
               </div>
             </Button>
             <Button variant="outline" class="">
               <div class="flex items-center  gap-2">
-                <Github class="w-4 h-4 " /> <span>-</span> <span>Github</span>
+                <Github class="w-4 h-4 " /> <span class="hidden sm:inline-flex">-</span> <span class="hidden min-[455px]:inline-flex">Github</span>
               </div>
             </Button>
 
