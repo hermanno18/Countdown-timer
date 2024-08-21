@@ -62,14 +62,14 @@ onMounted(() => {
 
 <template>
   <Primitive @mouseover="animateSlotToUp" @mouseleave="animateSlotToDown" :as="as" :as-child="asChild"
-    class="relative overflow-clip" :class="cn(buttonVariants({ variant, size }), props.class)">
-    <span>
-      <span id="default" class="block">
+    class="flex" :class="cn(buttonVariants({ variant, size }), props.class)">
+    <div class=" relative overflow-clip flex-1">
+      <div id="default" >
         <slot />
-      </span>
-      <span id="active" class="block absolute uppercase ">
+      </div>
+      <div id="active" class="absolute uppercase w-full">
         <slot />
-      </span>
-    </span>
+      </div>
+    </div>
   </Primitive>
 </template>

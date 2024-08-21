@@ -21,11 +21,7 @@ onMounted(() => {
         <h1 class="mb-5 font-black text-9xl align-top f font-dhurjati font-">000 : 00 : 00 : 00</h1>
         <div class="mt-12 max-w-xs mx-auto">
           <Button class="w-full">bonjour tois</Button>
-          <p>
-            <a href="/chat">chat</a>
-            
-          </p>
-          <a href="/perplex">pp</a>
+
           <div class="flex justify-between mt-12 pb-4">
             <Button variant="outline" class="rounded-full p-2 bg-transparent aspect-square">
               <ArrowLeft class="size-8" />
